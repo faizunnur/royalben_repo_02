@@ -17,25 +17,6 @@ provider "aws" {
   region = var.aws_region
 }
 
-variable "project_name" {
-  type    = string
-  default = "royalben_02"
-}
-
-variable "aws_region" {
-  type    = string
-  default = "us-east-1"
-}
-
-variable "public_key" {
-  type = string
-}
-
-variable "instance_type" {
-  type    = string
-  default = "t3.micro"
-}
-
 data "aws_vpc" "default" {
   default = true
 }
@@ -127,8 +108,4 @@ resource "aws_instance" "server" {
 
 output "public_ip" {
   value = aws_instance.server.public_ip
-}
-
-output "instance_id" {
-  value = aws_instance.server.id
 }

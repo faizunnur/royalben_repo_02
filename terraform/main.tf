@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "royalben-repo-02-tfstate"
+    bucket         = "devops-agent-tfstate-192626564093"
     key            = "royalben_02/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true

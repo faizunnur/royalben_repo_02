@@ -115,3 +115,7 @@ variable "tags" {
     Application = "nginx"
   }
 }
+
+variable "public_key" {
+  type = string
+}

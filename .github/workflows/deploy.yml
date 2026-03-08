@@ -132,7 +132,7 @@ jobs:
 
       - name: Write SSH private key
         run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > /tmp/ssh_key
+          echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > /tmp/ssh_key
           chmod 600 /tmp/ssh_key
 
       - name: Wait for SSH
@@ -187,7 +187,7 @@ jobs:
 
       - name: Verify SSH connectivity
         run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > /tmp/ssh_key_verify
+          echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > /tmp/ssh_key_verify
           chmod 600 /tmp/ssh_key_verify
           ssh -o StrictHostKeyChecking=no -o ConnectTimeout=10 \
             -i /tmp/ssh_key_verify \

@@ -50,7 +50,7 @@ resource "aws_key_pair" "deployer" {
 }
 
 resource "aws_security_group" "sg" {
-  name        = "${var.project_name}-sg"
+  name_prefix = "${var.project_name}-sg-"
   description = "DevOps Agent managed"
   vpc_id      = data.aws_vpc.default.id
 
